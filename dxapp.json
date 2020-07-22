@@ -1,0 +1,53 @@
+{
+  "name": "Somalier_v1.0",
+  "title": "Somalier_v1.0",
+  "summary": "Runs Somalier for relatedness checks for somatic samples",
+  "tags": [
+  ],
+  "properties": {
+    "github release": "v1.0"
+  },
+  "dxapi": "1.0.0",
+  "inputSpec": [
+    {
+      "name": "project_name",
+      "label": "project_name",
+      "help": "project from which to download input files",
+      "class": "string",
+      "optional": false
+    }
+  ],
+  "outputSpec": [
+    {
+      "name": "output",
+      "label": "Somalier_output",
+      "help": "All files within the output folder.",
+      "class": "array:file"
+    }
+  ],
+  "runSpec": {
+    "execDepends": [
+    ],
+    "distribution" : "Ubuntu",
+    "release":"16.04",
+    "file": "src/code.sh",
+    "interpreter": "bash",
+    "assetDepends": [
+    ]
+  },
+  "access": {
+    "allProjects":"UPLOAD",
+    "network": [
+      "*"
+    ]
+  },
+  "regionalOptions": {
+    "aws:us-east-1": {
+      "systemRequirements": {
+        "main": {
+          "instanceType": "mem1_ssd1_x2"
+        }
+      }
+    }
+  }
+}
