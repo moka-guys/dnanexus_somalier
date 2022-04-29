@@ -15,6 +15,17 @@
       "help": "project from which to download input files",
       "class": "string",
       "optional": false
+    },
+    {
+      "name": "pipeline",
+      "label": "pipeline",
+      "help": "which pipeline was used to generate the BAM?",
+      "class": "string",
+      "choices": [
+        "mokacan",
+        "mokaamp"
+      ],
+      "optional": false
     }
   ],
   "outputSpec": [

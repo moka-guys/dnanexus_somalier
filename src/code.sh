@@ -17,7 +17,12 @@ mkdir -p out/output/QC input_bams
 
 cd input_bams
 # Download BAM and BAI files
-dx download ${project_name}:output/*primerclipped.bam* --auth ${API_KEY}
+if [[ "$pipeline" == "mokaamp" ]]; then
+    dx download ${project_name}:output/*primerclipped.bam* --auth ${API_KEY}    
+elif [[ "$pipeline" == "mokacan" ]]; then
+    dx download ${project_name}:output/*tumor_markdup.bam* --auth ${API_KEY}
+fi
+
 cd ..
 
 tar -xf hs37d5.tar.gz
